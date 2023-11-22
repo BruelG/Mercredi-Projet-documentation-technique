@@ -1,0 +1,132 @@
+{% extends '../layout/base.html' %}
+{% load static %}
+{% block titre %}
+<h4 class="page-title">Plateforme Helsinki</h4>
+{% endblock %}
+
+{% block contentCustomStyle %}
+    style="background-color: white;"
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row justify-content-center">
+    <h4>Les grille de Cheminement pour votre cycle actuel du programme actuel</h4>
+    {% if messages %}
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <div class="col-lg-2 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">SES1</h3>
+            {% for courses1 in coursses1 %}
+            <div class="col-lg-12 col-md-12 mt-3">
+                <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color:rgba(241, 237, 237, 0.255) ;color: white;">
+                    <p><strong>{{courses1.nom}}</strong></p>
+                    <h6>Designation : ({{courses1.designation}})</h6>
+                    <span class="counter text-white text-sm">Credit Pour valider : {{courses1.credit}}</span>
+                </div>
+            </div>
+            {% empty %}
+                <h4>Pas de cours</h4>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">SES2</h3>
+            {% for courses2 in coursses2 %}
+            <div class="col-lg-12 col-md-12 mt-3">
+                <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color:rgba(241, 237, 237, 0.255) ;color: white;">
+                    <p><strong>{{courses2.nom}}</strong></p>
+                    <h6>Designation : ({{courses2.designation}})</h6>
+                    <span class="counter text-white text-sm">Credit Pour valider : {{courses2.credit}}</span>
+                </div>
+            </div>
+            {% empty %}
+                <h4>Pas de cours</h4>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">SES3</h3>
+            {% for courses3 in coursses3 %}
+            <div class="col-lg-12 col-md-12 mt-3">
+                <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color:rgba(241, 237, 237, 0.255) ;color: white;">
+                    <p><strong>{{courses3.nom}}</strong></p>
+                    <h6>Designation : ({{courses3.designation}})</h6>
+                    <span class="counter text-white text-sm">Credit Pour valider : {{courses3.credit}}</span>
+                </div>
+            </div>
+            {% empty %}
+                <h4>Pas de cours</h4>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">SES4</h3>
+            {% for courses4 in coursses4 %}
+            <div class="col-lg-12 col-md-12 mt-3">
+                <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color:rgba(241, 237, 237, 0.255) ;color: white;">
+                    <p><strong>{{courses4.nom}}</strong></p>
+                    <h6>Designation : ({{courses4.designation}})</h6>
+                    <span class="counter text-white text-sm">Credit Pour valider : {{courses4.credit}}</span>
+                </div>
+            </div>
+            {% empty %}
+                <h4>Pas de cours</h4>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">SES5</h3>
+            {% for courses5 in coursses5 %}
+            <div class="col-lg-12 col-md-12 mt-3">
+                <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color:rgba(241, 237, 237, 0.255) ;color: white;">
+                    <p><strong>{{courses5.nom}}</strong></p>
+                    <h6>Designation : ({{courses5.designation}})</h6>
+                    <span class="counter text-white text-sm">Credit Pour valider : {{courses5.credit}}</span>
+                </div>
+            </div>
+            {% empty %}
+                <h4>Pas de cours</h4>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">SES6</h3>
+            {% for courses6 in coursses6 %}
+            <div class="col-lg-12 col-md-12 mt-3">
+                <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color:rgba(241, 237, 237, 0.255) ;color: white;">
+                    <p><strong>{{courses6.nom}}</strong></p>
+                    <h6>Designation : ({{courses6.designation}})</h6>
+                    <span class="counter text-white text-sm">Credit Pour valider : {{courses6.credit}}</span>
+                </div>
+            </div>
+            {% empty %}
+                <h4>Pas de cours</h4>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row justify-content-center">
+    <div class="col-lg-12 col-md-12 justify-content-center">
+        <div class="white-box analytics-info-right w-100 d-flex justify-content-center">
+            <img src="{% static 'images/logo/teccart.jpg' %}" style="height: 50px;" alt="homepage" />
+        </div>
+    </div>
+</div>
+
+{% endblock %}

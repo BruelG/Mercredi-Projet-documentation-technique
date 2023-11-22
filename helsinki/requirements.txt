@@ -1,0 +1,12 @@
+asgiref==3.7.2
+Django==4.2.6
+django-extensions==3.2.3
+httplib2==0.22.0
+plantuml==0.3.0
+pydot==1.4.2
+pyparsing==3.1.1
+six==1.16.0
+sqlparse==0.4.4
+typing_extensions==4.8.0
+tzdata==2023.3
+uml-django==1.0.2
