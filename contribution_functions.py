@@ -8,11 +8,11 @@ import uuid  # Pour générer un UUID unique
 import re
 
 # Liste des préférences de piste, des sujets principaux et des types de contribution
-track_preferences = ["IRIA Congress 2023- General event track"]
-main_topics = ["IRIA Congress 2023 :Cloud", "IRIA Congress 2023 :Data", "IRIA Congress 2023 :Energy",
-               "IRIA Congress 2023 :Health", "IRIA Congress 2023 :Human-Machine", "IRIA Congress 2023 :Intelligence",
-               "IRIA Congress 2023 :Internet", "IRIA Congress 2023 :IoT", "IRIA Congress 2023 :Learning",
-               "IRIA Congress 2023 :Meta verse", "IRIA Congress 2023 :Mobility", "IRIA Congress 2023 :Multimedia"]
+track_preferences = ["Academic Pubish 2023- General event track"]
+main_topics = ["Academic Pubish 2023 :Cloud", "Academic Pubish 2023 :Data", "Academic Pubish 2023 :Energy",
+               "Academic Pubish :Health", "Academic Pubish 2023 :Human-Machine", "Academic Pubish 2023 :Intelligence",
+               "Academic Pubish 2023 :Internet", "Academic Pubish 2023 :IoT", "Academic Pubish 2023 :Learning",
+               "Academic Pubish 2023 :Meta verse", "Academic Pubish 2023 :Mobility", "Academic Pubish 2023 :Multimedia"]
 contribution_types = ["regular paper", "short paper", "idea"]
 content_types = ["academic research", "industry report", "industry research"]
 
@@ -127,7 +127,7 @@ def g_main_topics():
     return main_topics
 def show_submitted_informations(contribution_title, track_preference, main_topic, contribution_type, content_type,
                                author_email, first_name, last_name, institution, country,
-                               additional_authors, abstract, selected_topics):
+                               additional_authors, abstract):
     st.subheader("Submitted Information:")
     st.write(f"Contribution Title: {contribution_title}")
     st.write(f"Track Preference: {track_preference}")
@@ -148,7 +148,7 @@ def show_submitted_informations(contribution_title, track_preference, main_topic
         st.write(f"  - Email: {author['author_email']}")
 
     st.write(f"Abstract: {abstract}")
-    st.write(f"Selected Topics: {', '.join(selected_topics)}")
+    #st.write(f"Selected Topics: {', '.join(selected_topics)}")
 
 ##registration
 

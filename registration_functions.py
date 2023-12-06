@@ -52,28 +52,28 @@ def save_registration_info(confirmation_code, selected_registration, extra_pages
 
 def confirm_email(confirmation_code, email):
     snowflake_config = {
-        "user": "your_username",
-        "password": "your_password",
-        "account": "your_account",
-        "warehouse": "your_warehouse",
-        "database": "your_database",
-        "schema": "your_schema"
+        "user": "christiane",
+        "password": "Kkcv2002@gkmm",
+        "account": "rwwrqgg-fb48745",
+        "warehouse": "COMPUTE_WH",
+        "database": "RCWPROJET",
+        "schema": "CHRISTIANE"
     }
 
     try:
         conn = snowflake.connector.connect(**snowflake_config)
         cursor = conn.cursor()
-        
-        query = "SELECT * FROM registration WHERE confirmation_code = %s AND email = %s"
+
+        query = "SELECT * FROM RCWPROJET.CHRISTIANE.CONTRIBUTION WHERE CODE_CONFIRMATION = %s AND CHER_EMAIL = %s"
         cursor.execute(query, (confirmation_code, email))
         result = cursor.fetchone()
 
         if result:
-            st.success("Email confirmation successful. You are now registered.")
+            st.success("Confirmation de l'email réussie. Vous êtes maintenant inscrit.")
         else:
-            st.error("Invalid confirmation code or email. Please try again.")
+            st.error("Code de confirmation ou email invalide. Veuillez réessayer.")
     except Exception as e:
-        st.error(f"An error occurred while confirming the email: {str(e)}")
+        st.error(f"Une erreur s'est produite lors de la confirmation de l'email : {str(e)}")
     finally:
         conn.close()
 
