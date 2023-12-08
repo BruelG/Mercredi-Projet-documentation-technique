@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Mes Cours</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Mes Cours</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <table class="table table-bordered table-hover mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Titre du Cours</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if cours %}
+                    {% for cours in cours %}
+                        <tr>
+                            <td>{{ cours.titre }}</td>
+                            <td>
+                                <a href="{{ url_for('abandonner_cours', cours_id=cours.id) }}" class="btn btn-danger btn-sm">Abandonner</a>
+                                <button class="btn btn-primary btn-sm ajouter-au-emploi" data-cours-id="{{ cours.id }}">Ajouter à l'emploi</button>
+                               
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr><td colspan="2">Aucun cours inscrit.</td></tr>
+                {% endif %}
+            </tbody>
+        </table>
+        
+    </div>
+    
+    <script>
+        let coursAjoutes = [];
+    
+        document.querySelectorAll('.ajouter-au-emploi').forEach(button => {
+            button.addEventListener('click', function() {
+                const horaire = this.getAttribute('data-horaire');
+                const coursId = this.getAttribute('data-cours-id');
+    
+                if (coursAjoutes.some(cours => cours.horaire === horaire)) {
+                    alert('Conflit d\'horaire détecté avec un autre cours !');
+                } else {
+                    coursAjoutes.push({ id: coursId, horaire: horaire });
+                    
+                }
+            });
+        });
+    </script>
+    
+    
+    
+    <a href="/ajouter_cours" class="btn btn-primary">Retour</a>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

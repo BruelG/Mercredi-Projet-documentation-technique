@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='teccart.png') }}" alt="Logo de l'École" height="100">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/inscription">Inscription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login_admin') }}">Espace Administrateur</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="text-center my-4">Bienvenue sur le site des inscriptions</h1>
+
+    <div id="historyCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="3000">
+                <div class="card">
+                    <img class="card-img-top" src="/static/i3 (1).png" alt="Epoque 1">
+                    <div class="card-body">
+                        <p class="card-text">Avec un environnement d'apprentissage stimulant, cette institut encourage l'innovation, la créativité et le développement intellectuel parmi ses étudiants.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="carousel-item" data-interval="3000">
+                <div class="card">
+                    <img class="card-img-top" src="/static/i3 (2).png" alt="Epoque 2">
+                    <div class="card-body">
+                        <p class="card-text">"Reconnue pour son vaste réseau d'anciens élèves influents, l'institut offre des opportunités exceptionnelles de réseautage et de développement professionnel.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="carousel-item" data-interval="3000">
+                <div class="card">
+                    <img class="card-img-top" src="/static/i3 (3).png" alt="Epoque 3">
+                    <div class="card-body">
+                        <p class="card-text">L'engagement de l'institut envers la diversité et l'inclusion enrichit l'expérience éducative, permettant un échange culturel et intellectuel dynamique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#historyCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#historyCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+        </a>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #004b87; 
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.carousel-item img {
+    max-height: 400px; 
+    width: auto;
+    object-fit: cover; 
+}
+/* Style de la Navbar */
+.navbar {
+    background-image: url('/static/img.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Couvre toute la zone de la navbar */
+    background-repeat: no-repeat;
+}
+
+/* Style des liens de la Navbar */
+.navbar-dark .navbar-nav .nav-link {
+    color: white; /* Texte blanc */
+}
+
+/* Style des liens de la Navbar au survol */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: black; /* Texte noir au survol */
+}
+
+
+
+
+

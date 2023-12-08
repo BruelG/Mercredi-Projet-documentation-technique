@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin - Ajouter un Cours</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background-color: #f7f7f7; 
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 123, 255, 0.6);
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='teccart.png') }}" alt="Logo de l'École" height="90">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Accueil</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+  
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center mb-4">Panel Admin - Ajouter un Cours</h1>
+                <form action="{{ url_for('ajouter_cours_admin') }}" method="post">
+                    <div class="form-group">
+                        <label for="titre">Titre du cours:</label>
+                        <input type="text" class="form-control" id="titre" name="titre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="programme">Programme:</label>
+                        <input type="text" class="form-control" id="programme" name="programme" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" id="description" name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre_heures">Nombre d'heures:</label>
+                        <input type="number" class="form-control" id="nombre_heures" name="nombre_heures" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prof">Professeur:</label>
+                        <input type="text" class="form-control" id="prof" name="prof" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="salle">Salle:</label>
+                        <input type="text" class="form-control" id="salle" name="salle">
+                    </div>
+                    <div class="form-group">
+                        <label for="heure">Heure du cours:</label>
+                        <input type="time"  class="form-control"  id="heure" name="heure">
+
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="date_limite">Date Limite d'abondon:</label>
+                        <input type="date" class="form-control" id="date_limite" name="date_limite">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter le cours</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
