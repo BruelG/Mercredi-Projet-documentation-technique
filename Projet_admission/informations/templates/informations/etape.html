@@ -1,0 +1,55 @@
+{% extends 'base2.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        padding: 20px;
+        margin-right: 100px;
+        background-color: whitesmoke;
+      }
+
+      .disque-list {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+        text-align: center;
+        background-color: orangered;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <h2 style="color: steelblue">
+        Étapes pour déposer une demande d'admission
+      </h2>
+      <hr />
+      <br />
+      <div class="card">
+        <a
+          href="{% url 'admission' %}"
+          style="text-decoration: none; text-align: center"
+          >Faire une demande d'admission >
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

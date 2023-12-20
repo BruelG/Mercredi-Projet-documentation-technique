@@ -1,0 +1,98 @@
+/* Reset des styles par défaut */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+/* body head .nav_div {
+  position: fixed;
+} */
+
+/* Style du body nav bar */
+.nav_div {
+  background-image: url("../img/header_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.logo {
+  width: 100px; /* Ajustez la largeur en fonction de la taille de votre logo */
+  height: 90px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin-right: 80px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 15px;
+  margin-left: -30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  margin-top: -20px;
+  font-weight: bold;
+  margin-right: 100px;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+/* Style pour la section principale */
+section {
+  padding: 20px;
+}
+
+/* Style pour le pied de page */
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+/* Styles pour la liste déroulante */
+.Dropdown {
+  display: none;
+  position: absolute;
+  background-color: rgb(48, 83, 137) 170, 170, 216;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(240, 239, 239, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.Dropdown li {
+  display: block;
+}
+
+.Dropdown li a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.Dropdown li a:hover {
+  background-color: rgb(71, 116, 242) 30, 68, 255;
+}

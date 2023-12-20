@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="registration-form">
+        <form method="post" onsubmit="return test()">
+          {% csrf_token %}
+          <h2>Confirmation d'email</h2>
+          <p>
+            Veuillez saisir le code à 6 chiffres que vous avez reçu par email
+            pour confirmer votre adresse email.
+          </p>
+          <div class="form-group">
+            <label for="code_confirmation">Code de confirmation</label>
+            <input
+              type="text"
+              id="code_confirmation"
+              name="code_confirmation"
+              maxlength="6"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Confirmer</button>
+        </form>
+        <p
+          id="Error"
+          class="Error"
+          style="
+            color: red;
+            margin-top: 20px;
+            font-family: 'Times New Roman', Times, serif;
+          "
+        >
+          {{ error_message }}
+        </p>
+        <!-- <p class="register_link">
+          Vous n'avez pas de compte ?
+          <a href="{% url 'admission' %}">S'inscrire</a>
+        </p>
+      </div> -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="image-container">
+        <img
+          src="{% static 'img/registre.jpg' %}"
+          alt="Image d'étudiant"
+          class="student_image"
+        />
+      </div>
+    </div>
+  </div>
+  {% endblock %} {% block extra_css %}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/confirmeCourreil.css' %}"
+  />
+  {% endblock %} {% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/registre.js' %}"></script>
+  {% endblock %}
+</div>

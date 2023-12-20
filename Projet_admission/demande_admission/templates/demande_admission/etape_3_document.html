@@ -1,0 +1,311 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .type_admission {
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    width: 600px;
+    height: 100px;
+    overflow: hidden;
+    margin-right: 0px;
+    margin-left: 70px;
+    /*border: 1px solid #000; Ajouter une bordure pour mieux visualiser la zone de défilement */
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h2 class="card-title text-center">Soumettre les Documents</h2>
+          <form
+            method="post"
+            enctype="multipart/form-data"
+            action=""
+            class="needs-validation"
+            novalidate
+          >
+            {% csrf_token %} {% if type_admission == 'Baccalauréat' %}
+            <marquee
+              direction="left"
+              behavior="alternate"
+              class="type_admission"
+              >Diplôme prérequis pour le {{ type_admission }} :<strong
+                >Diplôme d'études secondaires</strong
+              >
+              <p>
+                Toutes les documents sont en Format pdf Ou <br />
+                Scanner la photo
+              </p>
+            </marquee>
+            <div class="mb-3">
+              <label for="releve_note"> 📄 Relevé de notes </label>
+              <input
+                type="file"
+                class="form-control"
+                name="releve_note"
+                id="releve_note"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            <div class="mb-3">
+              <label for="attestation"> 📜 Attestation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="attestation"
+                id="attestation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="lettre_motivation"> ✉️ Lettre de motivation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="lettre_motivation"
+                id="lettre_motivation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="piece_identite"> 🆔 Pièce d'identité </label>
+              <input
+                type="file"
+                class="form-control"
+                name="piece_identite"
+                id="piece_identite"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="acte_naissance"> 👶 Acte de Naissance </label>
+              <input
+                type="file"
+                class="form-control"
+                name="acte_Naissance"
+                id="acte_naissance"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            {% endif %} {% if type_admission == 'Master' %}
+            <marquee
+              direction="left"
+              behavior="alternate"
+              class="type_admission"
+              >Diplôme prérequis pour le {{ type_admission }} :
+              <strong>Baccalauréat</strong>
+              <p>Toutes les documents sont en Format pdf</p></marquee
+            >
+            <div class="mb-3">
+              <label for="releve_note"> 📄 Relevé de notes </label>
+              <input
+                type="file"
+                class="form-control"
+                name="releve_note"
+                id="releve_note"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            <div class="mb-3">
+              <label for="attestation"> 📜 Attestation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="attestation"
+                id="attestation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="lettre_motivation"> ✉️ Lettre de motivation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="lettre_motivation"
+                id="lettre_motivation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="piece_identite"> 🆔 Pièce d'identité </label>
+              <input
+                type="file"
+                class="form-control"
+                name="piece_identite"
+                id="piece_identite"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="acte_naissance"> 👶 Acte de Naissance </label>
+              <input
+                type="file"
+                class="form-control"
+                name="acte_Naissance"
+                id="acte_naissance"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            {% endif %} {% if type_admission == 'Doctorat' %}
+            <marquee
+              direction="left"
+              behavior="alternate"
+              class="type_admission"
+              >Diplôme prérequis pour le {{ type_admission }} :
+              <strong>Master</strong>
+              <p>Toutes les documents sont en Format pdf</p></marquee
+            >
+            <div class="mb-3">
+              <label for="releve_note"> 📄 Relevé de notes </label>
+              <input
+                type="file"
+                class="form-control"
+                name="releve_note"
+                id="releve_note"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            <div class="mb-3">
+              <label for="attestation"> 📜 Attestation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="attestation"
+                id="attestation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="lettre_motivation"> ✉️ Lettre de motivation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="lettre_motivation"
+                id="lettre_motivation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="piece_identite"> 🆔 Pièce d'identité </label>
+              <input
+                type="file"
+                class="form-control"
+                name="piece_identite"
+                id="piece_identite"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="acte_naissance"> 👶 Acte de Naissance </label>
+              <input
+                type="file"
+                class="form-control"
+                name="acte_Naissance"
+                id="acte_naissance"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            {% endif %} {% if type_admission == 'Maîtrise' %}
+            <marquee
+              direction="left"
+              behavior="alternate"
+              class="type_admission"
+              >>Diplôme prérequis pour la {{ type_admission }} :
+              <strong>Baccalauréat</strong>
+            </marquee>
+            <div class="mb-3">
+              <label for="releve_note"> 📄 Relevé de notes </label>
+              <input
+                type="file"
+                class="form-control"
+                name="releve_note"
+                id="releve_note"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            <div class="mb-3">
+              <label for="attestation"> 📜 Attestation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="attestation"
+                id="attestation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="lettre_motivation"> ✉️ Lettre de motivation </label>
+              <input
+                type="file"
+                class="form-control"
+                name="lettre_motivation"
+                id="lettre_motivation"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="piece_identite"> 🆔 Pièce d'identité </label>
+              <input
+                type="file"
+                class="form-control"
+                name="piece_identite"
+                id="piece_identite"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="acte_naissance"> 👶 Acte de Naissance </label>
+              <input
+                type="file"
+                class="form-control"
+                name="acte_Naissance"
+                id="acte_naissance"
+                required
+              />
+              <div class="invalid-feedback">Veuillez choisir un fichier.</div>
+            </div>
+            {% endif %}
+            <button type="submit" class="btn btn-success btn-block mt-4">
+              📤 Soumettre
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% load static %} {% block page_title %}Accueil
+Étudiant{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accuiel.css' %}" />
+{% endblock %} {% block content %}
+<div  class="container">
+  <div class="student_info">
+    <h1>Demande d'admission à l'université</h1>
+    <ul class="navbar">
+      <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+      <li><a href="{% url 'profil' %}">Profil</a></li>
+      {% if demande_admission %}
+      <li>
+        <a href="{% url 'etat_demande' %}">Voir Etat de la demande </a>
+      </li>
+      {% endif %}
+    </ul>
+    <ul>
+      <li>
+        <img
+          src="{% static 'img/user.png' %}"
+          alt="Avatar de l'utilisateur"
+          class="avatar"
+          style="width: 20px; height: 20px"
+        />
+        Code Utilisateur : {{ info_user.code_user }}
+      </li>
+      <li>
+        <img
+          src="../../../static/img/email.png"
+          alt="Icône d'e-mail"
+          class="icon"
+          style="width: 20px; height: 20px"
+        />
+        Email: {{ info_user.email }}
+      </li>
+      <!-- Ajoutez d'autres informations personnelles ici -->
+    </ul>
+    <p>
+      Ici, vous trouverez toutes les informations importantes concernant votre
+      parcours universitaire.
+    </p>
+    <ul>
+{% if demande_admission %}
+  <marquee direction="left"
+            behavior="alternate"
+            style=" background-color: cornflowerblue;">Vous avez deja une Demande En Cours ....</marquee>
+{% else %}
+<h4>Faire une nouvelle demande d'admission</h4>
+<ul class="button_list">
+  <p>Types de demande : &ensp;</p>
+  {% for type in types_admission %}
+    <li>
+      <form method="post">
+        {% csrf_token %}
+        <input type="submit" name="type" value="{{ type }}" style="color:rgb(100, 121, 237);">
+      </form>
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+</div>
+  {% endblock %} {% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/accueil.js' %}"></script>
+  {% endblock %}
+  <!-- !-- {% url 'demande_admission' %} -->
+</div>

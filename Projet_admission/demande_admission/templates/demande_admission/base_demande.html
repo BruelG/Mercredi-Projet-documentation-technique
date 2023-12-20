@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% load static %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/base_demande.css' %}"
+/>
+{% endblock %} {% block content %}
+<div class="title">
+  <h1>Type de demande : {{ type_admission }}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Étapes</h3>
+      <ul>
+        {% if step_1_validated %}
+        <li>
+          <a href="{% url 'etape_1' %}">Étape 1 : Programmes demandés </a>
+        </li>
+        {% elif step_1_validated_icon %}
+        <li>
+          Étape 1 : Programmes demandés
+          <img
+            src="{% static 'img/valide.jpg' %}"
+            alt="validated"
+            class="icon"
+            style="width: 20px; height: 20px; margin-left: auto"
+          />
+        </li>
+        {% else %}
+        <li>Étape 1 : Programmes demandés</li>
+        {% endif %} {% if step_2_validated %}
+        <li>
+          <a href="{% url 'etape_2' %}"
+            >Étape 2 : Informations d'identification</a
+          >
+        </li>
+        {% elif step_2_validated_icon %}
+        <li>
+          Étape 2 : Informations d'identification
+          <img
+            src="{% static 'img/valide.jpg' %}"
+            alt="validated"
+            class="icon"
+            style="width: 20px; height: 20px; margin-left: auto"
+          />
+        </li>
+        {% else %}
+        <li>Étape 2 : Informations d'identification</li>
+        {% endif %} {% if step_3_validated %}
+        <li class="validated">
+          <a href="{% url 'etape_3' %}">Étape 3 : Documents à fournir</a>
+        </li>
+        {% elif step_3_validated_icon %}
+        <li>
+          Étape 3 : Documents à fournir
+          <img
+            src="{% static 'img/valide.jpg' %}"
+            alt="validated"
+            class="icon"
+            style="width: 20px; height: 20px; margin-left: auto"
+          />
+        </li>
+        {% else %}
+        <li>Étape 3 : Documents à fournir</li>
+        {% endif %} {% if step_4_validated %}
+        <li class="validated">
+          <a href="{% url 'etape_4' %}">Étape 4 : Paiement</a>
+        </li>
+        {% elif step_4_validated_icon %}
+        <li>
+          Étape 4 : Paiement
+          <img
+            src="{% static 'img/valide.jpg' %}"
+            alt="validated"
+            class="icon"
+            style="width: 20px; height: 20px"
+          />
+        </li>
+        {% else %}
+        <li>Étape 4 : Paiement</li>
+        {% endif %}{% if step_5_validated %}
+        <li class="validated">
+          <a href="{% url 'etape_5' %}">Étape 5 : Confirmation</a>
+        </li>
+        {% elif step_5_validated_icon %}
+        <li>
+          Étape 5 : Confirmation
+          <img
+            src="{% static 'img/valide.jpg' %}"
+            alt="validated"
+            class="icon"
+            style="width: 20px; height: 20px"
+          />
+        </li>
+        {% else %}
+        <li>Étape 5 : Confirmation</li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="image_container">
+        <img
+          src="{% static 'img/image_demande.jpeg' %}"
+          alt="Student Image"
+          class="Student_Image"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

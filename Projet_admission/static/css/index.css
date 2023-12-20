@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  transition: 0.5s;
+}
+
+.carousel__image {
+  width: 100%;
+  height: auto;
+}

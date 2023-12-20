@@ -1,0 +1,68 @@
+{% extends '../layout/base.html' %}
+{% load static %}
+{% block titre %}
+<h4 class="page-title">Plateforme Helsinki</h4>
+{% endblock %}
+
+{% block contentCustomStyle %}
+    style="background-color: white;"
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-12 col-xlg-12 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <form class="form-horizontal form-material" method="POST"
+                    action="{% url 'dashboard:validerajoutplusieurscour' %}">
+                    {% csrf_token %}
+                    <div class="form-group mb-4">
+                        <label class="col-sm-12">Selectionnez les cours :</label>
+                        <div class="col-sm-12 border-bottom">
+                            <select class="form-select shadow-none p-0 border-0 form-control-line" required
+                                name="coursids[]" multiple="multiple" id="cours">
+                                {% for cour in cours %}
+                                    <option value="{{cour.id}}">{{cour.nom}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-success">Ajouter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#cours').select2({
+            "language": {
+                "noResults": function () {
+                    return "Pas de resultat trouvé";
+                }
+            },
+        })}
+    );
+</script>
+{% endblock %}

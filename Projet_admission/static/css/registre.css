@@ -1,0 +1,64 @@
+/* Votre CSS personnalisé pour le formulaire d'inscription */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.registration-form {
+  width: 100%;
+  padding: 40px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+form .btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+form .btn:hover {
+  background-color: #0056b3;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.student_image {
+  width: 100%;
+  height: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+}

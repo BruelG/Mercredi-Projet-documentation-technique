@@ -1,0 +1,33 @@
+etape 1: on recuprer la derniere de oersonne dn la table utilsateur (id)
+
+etape 2 :TA KE DEMANDE ADMISSION ON CHANGE LE SATUT PAR ADMISSION
+
+
+etape :  on recuoere les information du dernier candidat 
+
+
+
+
+
+
+
+
+
+
+
+
+table utilsateur
+
+nom
+prenom
+pseudo
+mdp
+email
+
+table session
+
+pseudo ==  user id
+
+facture 
+
+user id  =etudiant  id 

@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="login_form">
+        <form method="post">
+          {% csrf_token %}
+          <h2>Connexion</h2>
+          <div class="form-_group">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="code_user" required class="form_control" />
+          </div>
+          <div class="form_group">
+            <label for="password">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="form_control"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+        <p id="Error" class="Error">{{ error_message }}</p>
+        <p class="register_link">
+          Vous n'avez pas de compte ?
+          <a href="{% url 'register_user' %}">S'inscrire ici</a><br />
+          ou
+          <a href="{% url 'register_user' %}">Mot de passe oublié ?</a><br/>
+          <a href="http://127.0.0.1:8000/">etes vous deja etudiant?</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="image_container">
+        <img
+          src="/static/img/logo_registre.avif"
+          alt="Student Image"
+          class="student_image img_fluid"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/login_user.css' %}"
+/>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends '../layout/base.html' %}
+{% load static %}
+{% block titre %}
+<h4 class="page-title">Plateforme Helsinki</h4>
+{% endblock %}
+
+{% block contentCustomStyle %}
+    style="background-color: white;"
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <h4>Les cours dispensés pour votre cycle actuel du programme actuel et de la session actuelle</h4>
+
+    <h4>Il vous reste : <strong>{{facture.montant}} $</strong> à payer pour votre cycle actuel</h4>
+    {% if messages %}
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% for cour in cours %}
+    <div class="col-lg-4 col-md-12 mt-3">
+        <div class="white-box analytics-info hvr-underline-from-right w-100" style="background-color: #ecc527;color: white;">
+            <h3 class="box-title">{{cour.nom}}</h3>
+            <h3>Designation : ({{cour.designation}})</h3>
+            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                <li>
+                    <div id="sparklinedash6"><canvas width="67" height="30"
+                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                    </div>
+                </li>
+                <li class=""><span class="counter text-white text-sm">Credit Pour valider : {{cour.credit}}</span></li>
+            </ul>
+            <form action="{% url 'dashboard:validerajoutcour' %}" method="POST">
+                <input type="text" name="cour_id" value="{{cour.id}}" hidden>
+                {% csrf_token %}
+                <button class="btn btn-success btn-block w-100">Ajouter</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="row justify-content-center">
+    <div class="col-lg-12 col-md-12 justify-content-center">
+        <div class="white-box analytics-info-right w-100 d-flex justify-content-center">
+            <img src="{% static 'images/logo/teccart.jpg' %}" style="height: 50px;" alt="homepage" />
+        </div>
+    </div>
+</div>
+
+{% endblock %}

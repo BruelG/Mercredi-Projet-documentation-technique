@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/etap_4.css' %}" />
+<script type="text/javascript" src="{% static 'js/etap_4.js' %}"></script>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <center><h1>Choisir un Programme et un Trimestre</h1></center>
+      <form method="post">
+        {% csrf_token %}
+        <div class="Trimestre inline">
+          <p>
+            <strong>Choisir un Trimestre:</strong>
+            {% for trimestre in Trimestre %}
+            <label for="{{ trimestre.nom }}" style="font-size: 15px"
+              >{{ trimestre.nom }} - {{ trimestre.annee }}</label
+            >
+            <input
+              type="radio"
+              name="Trimestre"
+              value="{{ trimestre.nom }} {{ trimestre.annee }}"
+              required
+            />
+            {% endfor %}
+          </p>
+        </div>
+        <div class="program-list inline">
+          <h3>Choisir un Programme:</h3>
+          <select name="programme" id="programme">
+            {% for program in programme %}
+            <option value="{{ program.titre }}">{{ program.titre }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Suivant</button>
+      </form>
+      <p style="color: red">{{ Erreur }}</p>
+    </div>
+    <div class="col-md-6">
+      <div id="search-container">
+        <input
+          type="text"
+          name="search_program"
+          placeholder="Rechercher un programme..."
+        />
+        <button type="submit">Rechercher</button>
+      </div>
+      <p>
+        Consultez nos programmes pour trouver celui qui vous convient le mieux.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

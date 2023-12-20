@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .dashboard {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Bienvenue {{ username }}</p>
+    <div class="dashboard">
+      <h2>Demandes d'admission</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Demandeur</th>
+            <th>Date de Soumission</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for demande in demandes %}
+          <tr>
+            <td>{{ demande.demandeur }}</td>
+            <td>{{ demande.date_Soumision }}</td>
+            <td>
+              <a href="{% url 'detail_demande' demande.id %}">Voir détails</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin</title>
+    <style>
+      .login {
+        background: var(--darkened-bg);
+        height: auto;
+      }
+
+      .login #header {
+        height: auto;
+        padding: 15px 16px;
+        justify-content: center;
+      }
+
+      .login #header h1 {
+        font-size: 1.125rem;
+        margin: 0;
+      }
+
+      .login #header h1 a {
+        color: var(--header-link-color);
+      }
+
+      .login #content {
+        padding: 20px 20px 0;
+      }
+
+      .login #container {
+        background: var(--body-bg);
+        border: 1px solid var(--hairline-color);
+        border-radius: 4px;
+        overflow: hidden;
+        width: 28em;
+        min-width: 300px;
+        margin: 100px auto;
+        height: auto;
+      }
+
+      .login .form-row {
+        padding: 4px 0;
+      }
+
+      .login .form-row label {
+        display: block;
+        line-height: 2em;
+      }
+
+      .login .form-row #id_username,
+      .login .form-row #id_password {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .login .submit-row {
+        padding: 1em 0 0 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .login .password-reset-link {
+        text-align: center;
+      }
+      #header {
+        text-align: center;
+        background-color: #79aec8;
+        height: 40px;
+        line-height: 40px;
+      }
+      .main {
+        background-color: black;
+      }
+      .form-row {
+        color: white;
+      }
+      #id_username,
+      #id_password {
+        background-color: transparent;
+        color: white;
+      }
+      .btnConn {
+        background-color: #79aec8;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 9px;
+        height: 45px;
+        width: 120px;
+      }
+    </style>
+  </head>
+  <body class="login" data-admin-utc-offset="0">
+    <div id="container">
+      <div id="header">
+        <div id="branding">
+          <h1 id="site-name">Administration d' Admission</h1>
+        </div>
+        <!-- ... Autres éléments du header ... -->
+      </div>
+      <div class="main" id="main">
+        <div id="content-start" class="content" tabindex="-1">
+          <div id="content" class="colM">
+            <div id="content-main">
+              <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                  <label for="id_username" class="required"
+                    >Nom d’utilisateur :</label
+                  >
+                  <input
+                    type="text"
+                    name="username"
+                    autofocus=""
+                    autocapitalize="none"
+                    autocomplete="username"
+                    maxlength="150"
+                    required=""
+                    id="id_username"
+                  />
+                </div>
+                <div class="form-row">
+                  <label for="id_password" class="required"
+                    >Mot de passe :</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required=""
+                    id="id_password"
+                  />
+                </div>
+                <div class="submit-row">
+                  <input type="submit" value="Connexion" class="btnConn" />
+                </div>
+              </form>
+              <!-- ... Autres éléments du contenu ... -->
+            </div>
+            <br class="clear" />
+          </div>
+          <div id="footer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

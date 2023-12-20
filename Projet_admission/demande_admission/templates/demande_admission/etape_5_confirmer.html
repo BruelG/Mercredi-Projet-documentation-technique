@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/etape_5.css' %}" />
+<style>
+  strong {
+    font-family: "NouvellePolice", sans-serif;
+    font-weight: bold;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="container">
+  <img
+    src="{% static 'img/icone_uqam.jpeg' %}"
+    alt="UQAM Logo"
+    class="uqam_logo"
+    style="width: 50px; height: 20px"
+  />
+  <center>
+    <h1>Veuillez confirmer votre demande d'admission à l'UQAM</h1>
+  </center>
+  <p>Bonjour, {{ information_personnelle.nom }}</p>
+  <p>
+    Nee le <strong>{{ information_personnelle.date_naissance }}</strong> a {{ information_personnelle.lieu_naissance }}
+  </p>
+  <p>
+    Nous sommes ravis de vous informer que votre demande d'admission à
+    l'Université du Québec à Montréal (UQAM) vous pouvez bien confirmée.
+  </p>
+  <p>
+    Programme sélectionné :
+    <strong>{{ programme_trimestre.programme.titre }}</strong>
+  </p>
+  <p>
+    Trimestre sélectionné :
+    <strong
+      >{{ programme_trimestre.trimestre.nom }} {{ programme_trimestre.trimestre.annee }}</strong
+    >
+  </p>
+  <p>Type d'admission : <strong>{{ type_admissin }}</strong></p>
+
+  <p>
+    Vous pouvez maintenant confirmé votre demande d'admission. Veuillez prendre
+    note que cette lettre de confirmation ne constitue pas une acceptation
+    officielle. Vous recevrez une notification officielle dès que votre demande
+    aura été examinée.
+  </p>
+  <div class="text-center mt-4">
+    <form action="{% url 'etape_5' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-success">
+        Confirmer la demande
+      </button>
+      <p style="color: red; margin-top: 20px">{{ error }}</p>
+    </form>
+  </div>
+  <p>
+    Merci de choisir l'UQAM pour poursuivre vos études supérieures. Nous sommes
+    impatients de vous accueillir sur notre campus.
+  </p>
+  <p>
+    Pour voir les détails de votre demande,
+    <a href="{% url 'details_confirmation' %}">cliquez ici</a>.
+  </p>
+  <p>Cordialement,</p>
+  <p>L'Équipe d'Admission<br />Université du Québec à Montréal</p>
+  <img
+    src="{% static 'img/icone_uqam.jpeg' %}"
+    alt="UQAM Logo"
+    class="uqam_logo"
+    style="width: 50px; height: 20px; margin-left: 700px"
+  />
+</div>
+{% endblock %}

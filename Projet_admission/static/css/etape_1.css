@@ -1,0 +1,61 @@
+/* Ajoutez ce style dans le fichier 'etape_1.css' ou dans le fichier CSS approprié */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.program-list,
+.trimestre-list {
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+.trimestre-list select option {
+  color: black;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.Trimestre {
+  display: inline-block;
+  background-color: black;
+}
+button:hover {
+  background-color: #45a049;
+}
+#search-container button {
+  padding: 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.Trimestre,
+.program-list {
+  float: right;
+}
+
+/* Ajoutez ces styles pour un alignement propre des radios et des options */
+.Trimestre p,
+.program-list select {
+  margin-bottom: 10px;
+}

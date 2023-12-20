@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #555;
+  margin-bottom: 15px;
+}
+.demande-container {
+  text-align: center;
+  color: dodgerblue;
+}
+
+.demande-container p {
+  margin: 10px 0;
+}
+
+.demande-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+/* Add any additional styling as needed */

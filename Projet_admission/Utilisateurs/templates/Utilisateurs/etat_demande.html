@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% load static %} {% block page_title %}État de la
+Demande{% endblock %} {% block content %}
+<div class="demande-container">
+  <h2>État de la Demande</h2>
+  {% if demande_admission %}
+  <p>Nom: {{ demande_admission.Information_Personnel.nom }}</p>
+  <p>Prénom: {{ demande_admission.Information_Personnel.prenom }}</p>
+  <p>Envoyé le : {{ demande_admission.date_Soumision }}</p>
+  <p>
+    Statut de la demande: {{ demande_admission.get_statut_demande_display }}
+  </p>
+  <p>
+    Type de la demande : {{ demande_admission.ProgrammeTrimestre.programme.type_admission }}
+  </p>
+  <p>Programme et Trimestre : {{ demande_admission.ProgrammeTrimestre }}</p>
+
+  {% if demande_admission.statut_demande == 'attente' %}
+  <p>
+    Votre demande est en attente de traitement. Nous vous informerons dès qu'il
+    y aura des mises à jour.
+  </p>
+  <p>
+    Merci de choisir l'UQAM pour poursuivre vos études supérieures. Nous sommes
+    impatients de vous accueillir sur notre campus.
+  </p>
+  {% elif demande_admission.statut_demande == 'accepte' %}
+  <p>
+    Félicitations ! Votre demande a été acceptée. Vous recevrez bientôt des
+    instructions pour la suite du processus.
+  </p>
+  {% elif demande_admission.statut_demande == 'refus' %}
+  <p>
+    Malheureusement, votre demande a été refusée. Si vous avez des questions,
+    veuillez nous contacter.
+  </p>
+  {% endif %} {% else %}
+  <p>Aucune demande trouvée.</p>
+  {% endif %}
+</div>
+{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/etat_demande.css' %}" />
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  div {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  p {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  .demande-container {
+    text-align: center;
+    color: dodgerblue;
+  }
+
+  .demande-container p {
+    margin: 10px 0;
+  }
+
+  .demande-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+
+  /* Add any additional styling as needed */
+</style>
+{% endblock %}

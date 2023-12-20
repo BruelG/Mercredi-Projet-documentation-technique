@@ -1,0 +1,13 @@
+.content {
+  padding: 20px;
+  margin-right: 100px;
+  background-color: whitesmoke;
+  /* Marge à droite pour s'aligner à droite du menu vertical */
+}
+
+.disque-list {
+  list-style-type: disc;
+  /* Utilisation de puces de type disque */
+  padding-left: 20px;
+  /* Ajouter un décalage à gauche pour les puces */
+}

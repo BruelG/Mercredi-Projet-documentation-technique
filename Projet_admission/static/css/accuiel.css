@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 15px;
+}
+
+.avatar,
+.icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.avatar {
+  width: 40px; /* Ajustez la taille de l'avatar selon vos besoins */
+  height: 40px;
+  border-radius: 50%; /* Pour créer un effet d'avatar circulaire */
+}
+
+p {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: cornflowerblue;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #ddd;
+}
+.button_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.button_list li {
+  margin-right: 10px;
+  background-color: cornflowerblue;
+}
+.button_list form {
+  display: inline;
+}
+.button_list input[type="submit"] {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

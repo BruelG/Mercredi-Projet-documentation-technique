@@ -1,0 +1,58 @@
+/* Votre CSS personnalisé pour la page de demande d'admission */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.col-md-6 {
+  padding: 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.image_container {
+  display: flex;
+}
+
+.icone {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.Student_Image {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+}
+/* Ajoutez d'autres styles au besoin */
